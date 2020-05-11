@@ -1,19 +1,29 @@
 package com.jpw.elastic.model;
 
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
 
-@Document(indexName = "user", type = "User", shards = 1)
+@Document(indexName = "user", type = "User")
 public class User {
 	@Id
 	private String id;
-	private String userName;
+	
+	//@Field(type=FieldType.Text, fielddata=true)
+	private String username;
+	
 	private String userType;
 	private String status;
 	private String sourceSystem;
-	private String emailId;
-
-
+	private String firstName;
+	private String lastName;
+	private String photoUrl;
+	private String profileAvatarImgFileId;//for profile image
+	private String profileBannerImgFileId;//for banner image
+	
 	public String getId() {
 		return id;
 	}
@@ -25,16 +35,16 @@ public class User {
 	/**
 	 * @return the userName
 	 */
-	public String getUserName() {
-		return userName;
+	public String getUsername() {
+		return username;
 	}
 
 	/**
 	 * @param userName
 	 *            the userName to set
 	 */
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	/**
@@ -82,12 +92,44 @@ public class User {
 		this.sourceSystem = sourceSystem;
 	}
 
-	public String getEmailId() {
-		return emailId;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setEmailId(String emailId) {
-		this.emailId = emailId;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getPhotoUrl() {
+		return photoUrl;
+	}
+
+	public void setPhotoUrl(String photoUrl) {
+		this.photoUrl = photoUrl;
+	}
+	
+	public String getProfileAvatarImgFileId() {
+		return profileAvatarImgFileId;
+	}
+
+	public void setProfileAvatarImgFileId(String profileAvatarImgFileId) {
+		this.profileAvatarImgFileId = profileAvatarImgFileId;
+	}
+
+	public String getProfileBannerImgFileId() {
+		return profileBannerImgFileId;
+	}
+
+	public void setProfileBannerImgFileId(String profileBannerImgFileId) {
+		this.profileBannerImgFileId = profileBannerImgFileId;
 	}
 	
 }

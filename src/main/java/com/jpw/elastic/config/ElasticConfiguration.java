@@ -23,9 +23,9 @@ import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
 //import org.elasticsearch.common.settings.ImmutableSettings; 
 
-@Configuration
-@PropertySource(value = "classpath:elasticsearch.properties")
-@EnableElasticsearchRepositories(basePackages = "com.jpw.elastic.repository")
+//@Configuration
+//@PropertySource(value = "classpath:elasticsearch.properties")
+//@EnableElasticsearchRepositories(basePackages = "com.jpw.elastic.repository")
 public class ElasticConfiguration {
 
 	@Resource
@@ -66,24 +66,13 @@ public class ElasticConfiguration {
     }*/
     
 
-    @Bean
+/*    @Bean
     public Client client() {
-        /*TransportClient client = null;
-		client = TransportClient.builder().build()
-				.addTransportAddress(new InetSocketTransportAddress(new InetSocketAddress("127.0.0.1", 9300)));
-		
-		TransportClient client = new PreBuiltTransportClient(Settings.EMPTY)
-		        .addTransportAddress(new TransportAddress(InetAddress.getByName(esHost), 9300));
-*/
-		
-		TransportClient client = TransportClient.builder().build()
-		        .addTransportAddress(new InetSocketTransportAddress(new InetSocketAddress(esHost, esPort)));
+    	Settings settings = Settings.builder().put("cluster.name", "gpx-search").build();
+		TransportClient client = new PreBuiltTransportClient(settings);
+				
+		client.addTransportAddress(new InetSocketTransportAddress(new InetSocketAddress(esHost, esPort)));
 
-		
-/*    	RestHighLevelClient client = new RestHighLevelClient(
-    	        RestClient.builder(
-    	                new HttpHost("localhost", 9300, "http")));
-		*/
         return client;
     }
 
@@ -91,4 +80,31 @@ public class ElasticConfiguration {
     public ElasticsearchOperations elasticsearchTemplate() {
         return new ElasticsearchTemplate(client());
     }
+*/
+    
+    //    implementation('org.springframework.data:spring-data-elasticsearch:3.2.0.M4')
+/*
+    @Bean
+    RestHighLevelClient client() {
+      ClientConfiguration clientConfiguration = ClientConfiguration.builder().connectedTo("localhost:9200")
+       //.usingSsl().withDefaultHeaders(defaultHeaders)
+       .build();
+
+      RestHighLevelClient restHighLevelClient = RestClients.create(clientConfiguration).rest();
+      //RestHighLevelClient restHighLevelClient = new RestHighLevelClient(RestClient.builder(new HttpHost(esHost, esPort, "http")));
+    	//RestHighLevelClient restHighLevelClient = RestClients.create(ClientConfiguration.create("localhost:9200")).rest();
+
+     System.out.println("restHighLevelClient created ::: " + restHighLevelClient);
+
+     return restHighLevelClient;
+
+    }
+
+
+     @Bean
+    public ElasticsearchOperations elasticsearchTemplate() throws Exception {
+     return new ElasticsearchRestTemplate(client());
+    }*/
+   
+     
 }
