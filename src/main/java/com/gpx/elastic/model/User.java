@@ -1,4 +1,4 @@
-package com.jpw.elastic.model;
+package com.gpx.elastic.model;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ public class User {
 	
 	//@Field(type=FieldType.Text, fielddata=true)
 	private String username;
-	
+	private String full_name;//Display name
 	private String userType;
 	private String status;
 	private String sourceSystem;
@@ -45,6 +45,14 @@ public class User {
 	 */
 	public void setUsername(String username) {
 		this.username = username;
+	}
+
+	public String getFull_name() {
+		return full_name;
+	}
+
+	public void setFull_name(String full_name) {
+		this.full_name = full_name;
 	}
 
 	/**

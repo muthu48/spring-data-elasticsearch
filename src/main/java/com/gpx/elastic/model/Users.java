@@ -1,4 +1,4 @@
-package com.jpw.elastic.model;
+package com.gpx.elastic.model;
 
 import org.springframework.data.elasticsearch.annotations.Document;
 

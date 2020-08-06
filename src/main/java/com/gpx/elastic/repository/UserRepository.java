@@ -1,4 +1,4 @@
-package com.jpw.elastic.repository;
+package com.gpx.elastic.repository;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import org.springframework.data.elasticsearch.annotations.Query;
 import org.springframework.data.elasticsearch.repository.ElasticsearchCrudRepository;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 
-import com.jpw.elastic.model.User;
+import com.gpx.elastic.model.User;
 
 public interface UserRepository extends ElasticsearchRepository<User, String> {
 	List<User> findByUsername(String username, Pageable pageable);
@@ -22,6 +22,7 @@ public interface UserRepository extends ElasticsearchRepository<User, String> {
     "            \"query\" : \"?0*\"," + 
     "            \"fields\": [" +
     "       \"username\", " +
+    "       \"full_name\", " +
     "       \"firstName\", " +
     "       \"lastName\"" +
     "       ]" + 

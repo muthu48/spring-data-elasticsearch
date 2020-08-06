@@ -1,4 +1,4 @@
-package com.jpw.elastic.config;
+package com.gpx.elastic.config;
 
 import java.io.File;
 import java.io.IOException;

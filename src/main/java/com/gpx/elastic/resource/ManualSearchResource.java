@@ -1,4 +1,4 @@
-package com.jpw.elastic.resource;
+package com.gpx.elastic.resource;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jpw.elastic.builder.SearchQueryBuilder;
-import com.jpw.elastic.model.Users;
+import com.gpx.elastic.builder.SearchQueryBuilder;
+import com.gpx.elastic.model.Users;
 
 
 

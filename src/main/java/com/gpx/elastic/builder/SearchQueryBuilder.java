@@ -1,4 +1,4 @@
-package com.jpw.elastic.builder;
+package com.gpx.elastic.builder;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import org.springframework.data.elasticsearch.core.query.NativeSearchQuery;
 import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
 import org.springframework.stereotype.Component;
 
-import com.jpw.elastic.model.Users;
+import com.gpx.elastic.model.Users;
 
 @Component
 public class SearchQueryBuilder {

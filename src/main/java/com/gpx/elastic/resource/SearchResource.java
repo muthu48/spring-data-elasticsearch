@@ -1,7 +1,7 @@
-package com.jpw.elastic.resource;
+package com.gpx.elastic.resource;
 
-import com.jpw.elastic.model.User;
-import com.jpw.elastic.repository.UserRepository;
+import com.gpx.elastic.model.User;
+import com.gpx.elastic.repository.UserRepository;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

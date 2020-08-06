@@ -1,7 +1,7 @@
-package com.jpw.elastic.load;
+package com.gpx.elastic.load;
 
-import com.jpw.elastic.model.Users;
-import com.jpw.elastic.repository.UserRepository;
+import com.gpx.elastic.model.Users;
+import com.gpx.elastic.repository.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
