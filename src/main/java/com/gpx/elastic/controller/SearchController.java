@@ -77,7 +77,7 @@ public class SearchController {
         return new ResponseEntity<>(userRepository.save(user), HttpStatus.CREATED);
     }
     
-    @GetMapping(value = "/user", params = { "multiSearchText" })
+    @GetMapping(value = "/user")
     public ResponseEntity<List<User>> findByUsernameOrFirstNameOrLastName(@RequestParam("multiSearchText") String multiSearchText,
     		@RequestParam(value = "pageNumber", required = false) String pageNumberParam,
     		@RequestParam(value = "pageSize", required = false) String pageSizeParam) {
